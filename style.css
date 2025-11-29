@@ -1,0 +1,229 @@
+:root
+{
+    /* accent colors for the top stripe (used by pseudo-element) */
+    --red-color: hsl(0, 78%, 62%);
+    --cyan-color: hsl(180, 62%, 55%);
+    --orange-color: hsl(34, 97%, 64%);
+    --blue-color: hsl(212, 86%, 64%);
+    --accent-height: .35rem; 
+    /* stripe height */    
+
+    --grey-dark: hsl(234, 12%, 34%);
+    --grey-light: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font sizes */
+
+   --doc-header-size: clamp(.8rem, .6rem + 4vw, 2.5rem);
+   --doc-paragraph-size: clamp(.5rem, 4vw, 1.2rem);
+}
+
+*
+{
+    font-family: "Poppins", sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: var(--white);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+section#text-content
+{
+    display: flex;
+    
+    flex-flow: column;
+    
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    margin: .5rem;
+    margin-top: 2.5rem;
+}
+
+section#text-content > h1.light-header,
+section#text-content > h1.bold-header
+{
+    font-size: var(--doc-header-size);
+}
+
+section#text-content > h1.light-header
+{
+    color: var(--grey-light);
+    font-weight: 200;
+    
+}
+
+section#text-content > h1.bold-header
+{
+    color: var(--grey-dark);
+    font-weight: 600;
+}
+
+section#text-content > p.text-paragraph
+{
+    color: var(--grey-light);
+
+    padding: .5rem;
+
+    text-align: center;
+
+    font-weight: 500;
+    font-size: var(--doc-paragraph-size);
+}
+
+main#card-container
+{
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: column;
+}
+
+article.info-card
+{
+    position: relative;
+    margin: 2rem;
+    margin-bottom: 0rem;
+    display: flex;
+    flex-flow: column;
+
+    justify-content: center;
+    align-items: start;
+
+    width: clamp(15rem, 15rem + 10vw, 40rem);
+    height: clamp(12rem, 12rem + 5vw, 30rem);
+
+    padding: 2rem;
+    padding-top: 1.5rem;
+
+    box-shadow:
+    0px 10px 10px 1px hsl(212, 86%, 64%, 15%);
+
+    border-radius: 10px;
+
+    background-color: var(--white);
+}
+
+article.info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--accent-height);
+    background: var(--card-accent, transparent);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+article.info-card > h1.card-header
+{
+    color: var(--grey-dark);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+article.info-card > p.card-paragraph
+{
+    color: var(--grey-light);
+
+    font-size: .875rem;
+
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+    
+}
+
+article.info-card > img.card-image
+{
+    align-self: end;
+    width: 4rem;
+}
+
+article#supervisor-card
+{
+    grid-area: s;
+    --card-accent: var(--cyan-color);
+}
+
+article#team-builder-card
+{
+    grid-area: t;
+    --card-accent: var(--red-color);
+}
+
+article#karma-card
+{
+    grid-area: k;
+    --card-accent: var(--orange-color);
+}
+
+article#calculator-card
+{
+    grid-area: c;
+    --card-accent: var(--blue-color);
+}
+
+footer
+{
+    margin: 2rem;
+    justify-self: end;
+}
+
+footer > p.attribution
+{
+    font-size: 11px; 
+    text-align: center;
+}
+
+footer > p.attribution a
+{
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 72rem) 
+{
+    section#text-content
+    {
+        margin-top: 2rem;
+    }
+
+    section#text-content > p.text-paragraph
+    {
+        width: 60%;
+    }
+
+    article.info-card
+    {
+        width: clamp(16rem, 10rem + 10vw,30rem);
+        height: clamp(11rem, 8rem + 5vw, 20rem);
+    }
+
+    main#card-container
+    {
+        margin-top:.5rem;
+
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-items: center;
+
+        column-gap: 0;
+        row-gap: 0;
+
+        grid-template-areas: 
+        "s t c"
+        "s k c";
+    }    
+}
