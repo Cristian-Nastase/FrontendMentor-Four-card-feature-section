@@ -11,6 +11,7 @@
     --grey-dark: hsl(234, 12%, 34%);
     --grey-light: hsl(212, 6%, 44%);
     --white: hsl(0, 0%, 100%);
+    --white-bg: hsl(0, 0%, 98%);
 
     /* Font sizes */
 
@@ -28,7 +29,7 @@
 
 body
 {
-    background-color: var(--white);
+    background-color: var(--white-bg);
     min-height: 100vh;
 
     display: flex;
