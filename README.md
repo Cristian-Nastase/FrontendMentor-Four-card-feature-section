@@ -4,11 +4,13 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 your coding skills by building realistic projects.
 
 The website was done using only:
-    - HTML
-    - CSS
-    - mobile-first workflow
+- HTML
+- CSS
+- mobile-first workflow
 
+## Link to Website (hosted with GitHub Pages)
 
+*https://cristian-nastase.github.io/FrontendMentor-Four-card-feature-section/*
 
 ## Author
 - GitHub: https://github.com/Cristian-Nastase
